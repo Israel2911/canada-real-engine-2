@@ -1,0 +1,7 @@
+# === Core dependencies ===
+requests>=2.31            # For external and Perplexity API fetches
+flask==3.1.1              # For serving the API endpoint
+flask-cors==4.0.0         # Enables CORS for frontend access (e.g., from Wix)
+
+# === Optional / Future utilities ===
+pandas>=2.2               # Only needed if parsing or transforming CSV/JSON datasets
