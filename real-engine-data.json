@@ -1,149 +1,277 @@
 {
-  "labour": {
-    "headline": "Labour Market Update",
-    "summary": "Current global and Canadian labour trends.",
+  "canada_immigration": {
+    "headline": "Canada Immigration Outlook: Strategic Reduction & Quality Focus for 2025",
+    "last_updated": "2025-09-09T13:26:00.000Z",
+    "regional_content": {
+      "canada": "Canada has reduced its permanent resident targets to 395,000 for 2025 (down from previous years), representing a strategic shift toward quality over quantity in immigration selection. The Express Entry system has pivoted to targeted, category-based draws focusing on French language proficiency, healthcare workers, STEM professionals, and trades. Provincial Nominee Programs face significant allocation cuts - BC reduced by 50% to 4,000 nominations, while other provinces adjust their selection criteria accordingly.",
+      "uk": "Canada maintains competitive positioning against UK immigration pathways, with faster processing times for skilled workers and clearer pathways to permanent residence. While UK post-study work visas offer limited duration, Canada's system provides stronger permanent residency prospects for international graduates and skilled professionals seeking long-term settlement.",
+      "europe": "European professionals increasingly view Canada as an attractive alternative, particularly in tech and healthcare sectors. Canada's bilingual advantage appeals to French-speaking Europeans, while the Start-up Visa program attracts European entrepreneurs. Processing times remain competitive compared to European internal mobility programs.",
+      "southeast-asia": "Southeast Asian migration to Canada continues through family class immigration and skilled worker programs, though new caps on international students affect traditional pathways. The region remains a priority source for healthcare professionals and skilled trades workers under provincial nominee programs."
+    },
     "kpis": [
-      { "label": "Unemployment Rate", "value": "4.8%" },
-      { "label": "Job Vacancies", "value": "912,000" },
-      { "label": "Wage Growth", "value": "+3.5%" }
+      {
+        "label": "2025 PR Target",
+        "value": "395,000"
+      },
+      {
+        "label": "Q2 2025 Admissions",
+        "value": "207,650"
+      },
+      {
+        "label": "Express Entry ITAs (Jan-May)",
+        "value": "33,404"
+      },
+      {
+        "label": "Unemployment Rate",
+        "value": "6.9%"
+      }
     ],
-    "latest_resources": [
-      { "title": "OECD Employment Outlook 2025", "provider": "OECD", "url": "https://www.oecd.org/employment-outlook/" },
-      { "title": "Future of Jobs Report 2025", "provider": "World Economic Forum", "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/digest/" },
-      { "title": "Velocity Global: 2025 Labor Market Trends", "provider": "Velocity Global", "url": "https://velocityglobal.com/resources/blog/labor-market-trends/" },
-      { "title": "Employment Trends 2025: The Global Job Market", "provider": "CloudHire", "url": "https://www.cloudhire.ai/employment-trends-2025/" },
-      { "title": "ILO World Employment Social Outlook", "provider": "ILO", "url": "https://www.ilo.org/global/research/global-reports/weso/trends-2025/lang--en/index.htm" },
-      { "title": "Deloitte: Global Trends Shaping Labour Markets 2025", "provider": "Deloitte", "url": "https://www.deloitte.com/au/en/services/economics/blogs/2025-global-trends-shaping-labour-markets.html" },
-      { "title": "LinkedIn Global Talent Trends", "provider": "LinkedIn", "url": "https://business.linkedin.com/talent-solutions/resources/talent-strategy/global-talent-trends-report" },
-      { "title": "Job Bank Labour Market Information", "provider": "Government of Canada", "url": "https://www.jobbank.gc.ca/trend-analysis" },
-      { "title": "WorldSkills International", "provider": "WorldSkills", "url": "https://worldskills.org/" },
-      { "title": "MITx MicroMasters in Supply Chain Management", "provider": "MITx", "url": "https://micromasters.mit.edu/scm/" }
-    ]
+    "chart": {
+      "chart_type": "bar",
+      "data_points": [
+        {
+          "label": "Economic Class",
+          "value": 232150
+        },
+        {
+          "label": "Family Class",
+          "value": 94500
+        },
+        {
+          "label": "Refugees",
+          "value": 58350
+        },
+        {
+          "label": "Other",
+          "value": 10000
+        }
+      ]
+    },
+    "source": "Immigration, Refugees and Citizenship Canada (IRCC)"
   },
-  "student_mobility": {
-    "headline": "Global Student Mobility Insights",
-    "summary": "Analysis and key mobility trends for 2025 and beyond.",
+  "canada_labour": {
+    "headline": "Canadian Labour Market: Tech Skills Gap Reaches 250,000 Jobs by Year-End",
+    "summary": "Canada's labour market shows resilience despite challenges, adding 99,300 jobs in Q2 2025. The tech sector faces a critical talent shortage with an estimated 250,000 additional tech positions needed by year-end. Unemployment sits at 6.9% nationally, but tech sector unemployment remains low at 3.3%. Wage growth continues at 3.4% annually, while companies invest heavily in upskilling (53%) and reskilling (45%) programs.",
+    "last_updated": "2025-09-09T13:26:00.000Z",
     "kpis": [
-      { "label": "International Students", "value": "6.5 million" },
-      { "label": "Inbound Mobility Ratio", "value": "8.3%" },
-      { "label": "Student Visa Approvals", "value": "95%" }
+      {
+        "label": "Q2 2025 Job Growth",
+        "value": "99,300"
+      },
+      {
+        "label": "Tech Jobs Needed",
+        "value": "250,000"
+      },
+      {
+        "label": "Tech Unemployment",
+        "value": "3.3%"
+      },
+      {
+        "label": "Wage Growth YoY",
+        "value": "3.4%"
+      }
     ],
-    "latest_resources": [
-      { "title": "ICEF Global Student Mobility Report", "provider": "ICEF", "url": "https://monitor.icef.com/category/reports-data/" },
-      { "title": "QS World University Rankings 2025", "provider": "QS", "url": "https://www.topuniversities.com/university-rankings" },
-      { "title": "Top 10 Places to Study Abroad 2025", "provider": "Educations.com", "url": "https://www.educations.com/top-10-lists/top-10-places-to-study-abroad-global-18096" },
-      { "title": "Top 10 Countries to Study Abroad 2025", "provider": "WeAreFreeMovers", "url": "https://www.wearefreemovers.com/top-10-countries-to-study-abroad-in-2025-that-accept-free-movers/" },
-      { "title": "International Student Mobility", "provider": "Migration Data Portal", "url": "https://www.migrationdataportal.org/themes/international-student-mobility" },
-      { "title": "UNESCO Global Education Monitoring Report", "provider": "UNESCO", "url": "https://en.unesco.org/gem-report/" },
-      { "title": "Erasmus+ Study Mobility Opportunities", "provider": "European Commission", "url": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students" },
-      { "title": "DAAD: Scholarships for International Students", "provider": "DAAD", "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships-daad/" },
-      { "title": "EducationUSA: Study in the USA", "provider": "EducationUSA", "url": "https://educationusa.state.gov/" },
-      { "title": "StudyPortals: Global Degree Finder", "provider": "StudyPortals", "url": "https://www.studyportals.com/" }
-    ]
+    "chart": {
+      "chart_type": "doughnut",
+      "data_points": [
+        {
+          "label": "Healthcare",
+          "value": 1.9
+        },
+        {
+          "label": "Utilities",
+          "value": 2.0
+        },
+        {
+          "label": "Professional Services",
+          "value": 3.3
+        },
+        {
+          "label": "Manufacturing",
+          "value": 3.9
+        }
+      ]
+    },
+    "source": "Statistics Canada, Actalent Canada Labour Market Brief"
   },
-  "tourism_labour": {
-    "headline": "Tourism & Hospitality Labour Trends",
-    "summary": "The most important workforce facts and new upskilling sources for hotels, F&B and global travel.",
+  "canada_tech_innovation": {
+    "headline": "Canada's Digital Economy: $74B Market Growing at 25.4% CAGR Through 2030",
+    "summary": "Canada's digital transformation market is experiencing explosive growth, projected to reach $229.61 billion by 2030 from $74.02 billion in 2025. Federal AI Compute Strategy allocates $2 billion for national super-computing facilities and regional AI clusters. Ontario leads with 37.2% market share, while Alberta emerges as a compute hub with 28.6% provincial CAGR. Key growth areas include AI/ML (35% salary increases), cybersecurity (28% salary increases), and blockchain applications.",
+    "last_updated": "2025-09-09T13:26:00.000Z",
     "kpis": [
-      { "label": "Travel Jobs Recovered", "value": "98%" },
-      { "label": "Hospitality Workforce Growth", "value": "+5.2%" },
-      { "label": "Digital Upskilling Rate", "value": "17%" }
+      {
+        "label": "Digital Market 2025",
+        "value": "$74.02B"
+      },
+      {
+        "label": "Projected CAGR",
+        "value": "25.4%"
+      },
+      {
+        "label": "AI Investment",
+        "value": "$2B"
+      },
+      {
+        "label": "Ontario Market Share",
+        "value": "37.2%"
+      }
     ],
-    "latest_resources": [
-      { "title": "UNWTO World Tourism Barometer 2025", "provider": "UNWTO", "url": "https://www.unwto.org/unwto-tourism-dashboard" },
-      { "title": "Key Hospitality Data & Industry Statistics 2025", "provider": "EHL Insights", "url": "https://hospitalityinsights.ehl.edu/hospitality-industry-statistics" },
-      { "title": "WTTC Economic Impact Reports", "provider": "WTTC", "url": "https://wttc.org/research/economic-impact" },
-      { "title": "Hospitality Industry Challenges 2025", "provider": "Growth Engineering", "url": "https://www.growthengineering.co.uk/hospitality-challenges/" },
-      { "title": "Cornell Hospitality Management Programs", "provider": "Cornell", "url": "https://ecornell.cornell.edu/certificates/hospitality-and-foodservice-management/hospitality-management/" },
-      { "title": "FutureLearn: Hospitality Skills Courses", "provider": "FutureLearn", "url": "https://www.futurelearn.com/subjects/business-and-management-courses/hospitality" },
-      { "title": "Tourism Labour Market Information", "provider": "Tourism HR Canada", "url": "https://tourismhr.ca/" },
-      { "title": "Digital Transformation in Tourism", "provider": "Coursera/WageningenX", "url": "https://www.coursera.org/learn/digital-transformation-tourism" },
-      { "title": "HospitalityNet Industry News", "provider": "HospitalityNet", "url": "https://www.hospitalitynet.org/" },
-      { "title": "Sustainable Hospitality Alliance Research", "provider": "Sustainable Hospitality Alliance", "url": "https://sustainablehospitalityalliance.org/insights/" }
-    ]
+    "chart": {
+      "chart_type": "bar",
+      "data_points": [
+        {
+          "label": "Ontario",
+          "value": 37.2
+        },
+        {
+          "label": "Quebec",
+          "value": 22.8
+        },
+        {
+          "label": "British Columbia",
+          "value": 18.5
+        },
+        {
+          "label": "Alberta",
+          "value": 12.3
+        }
+      ]
+    },
+    "source": "Mordor Intelligence, Government of Canada AI Strategy"
   },
-  "healthcare_mobility": {
-    "headline": "Healthcare Workforce Mobility",
-    "summary": "Global update in skills migration, digital healthcare, and workforce policy.",
+  "canada_startup_ecosystem": {
+    "headline": "Start-up Visa Program: Record 5,595 Entrepreneurs, New Application Caps Introduced",
+    "summary": "Canada's Start-up Visa program hit record numbers in 2024 with 5,595 entrepreneurs receiving permanent residency. New 2025 regulations introduce application caps (10 per designated organization annually, 820 total) and prioritize Tech Network-backed applications. The program focuses on high-impact sectors including AI, cybersecurity, clean technology, and health tech. Enhanced work permit options provide 3-year validity for qualifying applicants.",
+    "last_updated": "2025-09-09T13:26:00.000Z",
     "kpis": [
-      { "label": "International Nurse Demand", "value": "170,000" },
-      { "label": "Health Workforce Mobility Growth", "value": "+6.1%" },
-      { "label": "Digital Credential Adoption", "value": "31%" }
+      {
+        "label": "2024 PR Recipients",
+        "value": "5,595"
+      },
+      {
+        "label": "Annual App Cap",
+        "value": "820"
+      },
+      {
+        "label": "Tech Network Priority",
+        "value": "Yes"
+      },
+      {
+        "label": "Work Permit Duration",
+        "value": "3 Years"
+      }
     ],
-    "latest_resources": [
-      { "title": "WHO Health Workforce Topic Page", "provider": "WHO", "url": "https://www.who.int/health-topics/health-workforce" },
-      { "title": "Top Healthcare Training Programs 2025", "provider": "InfoPro Learning", "url": "https://www.infoprolearning.com/blog/top-healthcare-training-programs-transforming-workforce-readiness-in-2025/" },
-      { "title": "Global Health Workforce Statistics", "provider": "WHO", "url": "https://www.who.int/data/gho/data/themes/topics/health-workforce" },
-      { "title": "150 Top Places to Work in Healthcare 2025", "provider": "Becker’s Healthcare", "url": "https://www.heywood.org/news/150-top-places-to-work-in-healthcare-2025" },
-      { "title": "OECD Health Workforce Policy", "provider": "OECD", "url": "https://www.oecd.org/health/workforce.htm" },
-      { "title": "Healthcare Workforce Mobility India", "provider": "Heal by India", "url": "https://healbyindia.gov.in" },
-      { "title": "International Council of Nurses Positions", "provider": "ICN", "url": "https://www.icn.ch/nursing-policy/position-statements" },
-      { "title": "Care Management Software 2025", "provider": "Innovaccer", "url": "https://innovaccer.com/resources/blogs/list-of-leading-care-management-software-in-2025-features-and-top-providers" },
-      { "title": "Global Health eLearning Center", "provider": "USAID", "url": "https://www.globalhealthlearning.org/" },
-      { "title": "Healthcare Labour Mobility Resources", "provider": "European Observatory on Health Systems and Policies", "url": "https://eurohealthobservatory.who.int/topics/health-workforce" }
-    ]
+    "chart": {
+      "chart_type": "doughnut",
+      "data_points": [
+        {
+          "label": "AI/ML",
+          "value": 25
+        },
+        {
+          "label": "Cybersecurity",
+          "value": 20
+        },
+        {
+          "label": "Clean Tech",
+          "value": 18
+        },
+        {
+          "label": "Health Tech",
+          "value": 15
+        }
+      ]
+    },
+    "source": "Immigration, Refugees and Citizenship Canada, Global Citizen Solutions"
   },
-  "immigration": {
-    "headline": "Immigration Pathways and Policy Data",
-    "summary": "The latest on policy, flows, and trends in global migration and bilateral student, work, and skilled visas.",
+  "canada_regional_development": {
+    "headline": "Regional Economic Development: Prairie Provinces Lead Growth, Atlantic Shows Resilience",
+    "summary": "Canadian regional economies show diverse growth patterns in 2025. Saskatchewan leads with record $16.2 billion private capital investment (10.1% increase), driven by mining and critical minerals. Atlantic provinces maintain steady employment growth amid national labor market cooling. British Columbia's tech sector continues expansion with life sciences investments like Stemcell Technologies' $222 million biomanufacturing facility. Ontario and Quebec face manufacturing sector pressures from U.S. trade tensions.",
+    "last_updated": "2025-09-09T13:26:00.000Z",
     "kpis": [
-      { "label": "Total Migrants 2025", "value": "291 million" },
-      { "label": "Express Entry Invitations", "value": "110,000" },
-      { "label": "EU Blue Card Approvals", "value": "28,000" }
+      {
+        "label": "Saskatchewan Investment",
+        "value": "$16.2B"
+      },
+      {
+        "label": "BC Life Sciences Investment",
+        "value": "$222M"
+      },
+      {
+        "label": "Atlantic Unemployment",
+        "value": "Stable"
+      },
+      {
+        "label": "Critical Minerals Reserves",
+        "value": "27/34"
+      }
     ],
-    "latest_resources": [
-      { "title": "USCIS Immigration & Citizenship Data", "provider": "USCIS", "url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data" },
-      { "title": "Migration Data Portal", "provider": "IOM", "url": "https://www.migrationdataportal.org/" },
-      { "title": "Top Statistics on Global Migration", "provider": "Migration Policy Institute", "url": "https://www.migrationpolicy.org/article/top-statistics-global-migration-migrants" },
-      { "title": "ICMPD Migration Outlook 2025", "provider": "ICMPD", "url": "https://www.icmpd.org/file/download/63373/file/ICMPD%2520Migration%2520Outlook%25202025.pdf" },
-      { "title": "Global Migration Data Analysis Centre (GMDAC)", "provider": "IOM", "url": "https://gmdac.iom.int/" },
-      { "title": "OECD International Migration Outlook 2025", "provider": "OECD", "url": "https://www.oecd.org/migration/international-migration-outlook-1999124x.htm" },
-      { "title": "Best Countries to Migrate in 2025", "provider": "Savory & Partners", "url": "https://www.savoryandpartners.com/blog/best-countries-migrate-immigration" },
-      { "title": "EU Immigration Policy", "provider": "European Commission", "url": "https://ec.europa.eu/info/policies/justice-and-fundamental-rights/migration-and-asylum_en" },
-      { "title": "IRCC Express Entry Latest Data", "provider": "IRCC Canada", "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/rounds-invitations.html" },
-      { "title": "UK Home Office Immigration Statistics", "provider": "UK Home Office", "url": "https://www.gov.uk/government/collections/immigration-statistics-quarterly-release" }
-    ]
+    "chart": {
+      "chart_type": "bar",
+      "data_points": [
+        {
+          "label": "Prairie Provinces",
+          "value": 28.6
+        },
+        {
+          "label": "Atlantic Canada",
+          "value": 15.2
+        },
+        {
+          "label": "British Columbia",
+          "value": 18.8
+        },
+        {
+          "label": "Central Canada",
+          "value": 12.4
+        }
+      ]
+    },
+    "source": "TD Economics, Bank of Canada, Statistics Canada"
   },
-  "immigration_research": {
-    "headline": "Migration & Integration Research",
-    "summary": "Scholarly and policy resources tracking integration, civic sense, discrimination, and mental health for migrants globally.",
+  "canada_international_education": {
+    "headline": "International Education Sector: 10% Reduction in Study Permits, Shift to Quality Focus",
+    "summary": "Canada implements significant policy changes in international education with study permit caps of 437,000 for 2025 (10% reduction from 2024). The sector adapts to address housing shortages and infrastructure pressures while maintaining quality education delivery. Provincial programs adjust allocation strategies, with enhanced focus on STEM, healthcare, and French-language programs. Post-graduation work permit pathways remain strong for permanent residency transitions.",
+    "last_updated": "2025-09-09T13:26:00.000Z",
     "kpis": [
-      { "label": "Integration Index 2025", "value": "61/100" },
-      { "label": "Civic Participation Uplift", "value": "+7%" },
-      { "label": "Policy Innovation Score", "value": "8.2" }
+      {
+        "label": "2025 Study Permit Cap",
+        "value": "437,000"
+      },
+      {
+        "label": "Reduction from 2024",
+        "value": "10%"
+      },
+      {
+        "label": "First Half 2025 Permits",
+        "value": "149,860"
+      },
+      {
+        "label": "PGWP Pathway Strong",
+        "value": "Yes"
+      }
     ],
-    "latest_resources": [
-      { "title": "Migration Data Hub", "provider": "Migration Policy Institute", "url": "https://www.migrationpolicy.org/programs/migration-data-hub" },
-      { "title": "OECD Integration of Immigrants", "provider": "OECD", "url": "https://www.oecd.org/migration/integration-indicators/" },
-      { "title": "ICMPD Migration Outlook 2025", "provider": "ICMPD", "url": "https://www.icmpd.org/file/download/63373/file/ICMPD%2520Migration%2520Outlook%25202025.pdf" },
-      { "title": "Journal of Ethnic and Migration Studies", "provider": "Taylor & Francis", "url": "https://www.tandfonline.com/journals/cjms20" },
-      { "title": "Oxford Migration Observatory", "provider": "University of Oxford", "url": "https://migrationobservatory.ox.ac.uk/" },
-      { "title": "MIPEX Migrant Integration Policy Index", "provider": "MIPEX", "url": "https://www.mipex.eu/" },
-      { "title": "IOM Applied Migration Research", "provider": "IOM", "url": "https://www.iom.int/research" },
-      { "title": "IMISCOE Research Network", "provider": "IMISCOE", "url": "https://www.imiscoe.org/" },
-      { "title": "Refugee Integration: CAMH Canada", "provider": "CAMH", "url": "https://www.camh.ca/en/health-info/guides-and-publications/immigrant-refugee-mental-health-project" },
-      { "title": "NHS Migrant Health Guide", "provider": "NHS", "url": "https://www.gov.uk/guidance/nhs-entitlements-migrant-health-guide" }
-    ]
-  },
-  "innovation": {
-    "headline": "Global Innovation & Startup Hubs",
-    "summary": "Startup ecosystems and R&D pulse checks, with upskilling and venture support worldwide.",
-    "kpis": [
-      { "label": "Funding Growth YoY", "value": "+12%" },
-      { "label": "New Unicorns", "value": "81" },
-      { "label": "Global Ecosystem Score", "value": "7.4/10" }
-    ],
-    "latest_resources": [
-      { "title": "Global Startup Ecosystem Index 2025", "provider": "StartupBlink", "url": "https://www.startupblink.com/global-startup-ecosystem-index/rankings/2025" },
-      { "title": "Best Startup Ecosystems 2025", "provider": "World Economic Magazine", "url": "https://worldecomag.com/startup-ecosystems-2025-innovation-hubs/" },
-      { "title": "Top 10 Global Startup Cities", "provider": "Indian Express", "url": "https://indianexpress.com/article/trending/top-10-listing/top-10-startup-cities-in-2025-bengaluru-delhi-mumbai-top-20-10038056/" },
-      { "title": "Global Innovation Index 2025", "provider": "WIPO", "url": "https://www.globalinnovationindex.org/" },
-      { "title": "Startup Genome Ecosystem Report", "provider": "Startup Genome", "url": "https://startupgenome.com/ecosystem-report-2025" },
-      { "title": "OECD Innovation Indicators", "provider": "OECD", "url": "https://www.oecd.org/innovation/" },
-      { "title": "YCombinator Startup School", "provider": "YCombinator", "url": "https://www.startupschool.org/" },
-      { "title": "Techstars Insights", "provider": "Techstars", "url": "https://www.techstars.com/resources" },
-      { "title": "Harvard Innovation Labs", "provider": "Harvard University", "url": "https://innovationlabs.harvard.edu/" },
-      { "title": "Global Entrepreneurship Monitor", "provider": "GEM Consortium", "url": "https://www.gemconsortium.org/" }
-    ]
+    "chart": {
+      "chart_type": "bar",
+      "data_points": [
+        {
+          "label": "2023 Permits",
+          "value": 245000
+        },
+        {
+          "label": "2024 Permits",
+          "value": 485000
+        },
+        {
+          "label": "2025 Target",
+          "value": 437000
+        },
+        {
+          "label": "H1 2025 Actual",
+          "value": 149860
+        }
+      ]
+    },
+    "source": "Immigration, Refugees and Citizenship Canada, Canadian Bureau for International Education"
   }
 }
