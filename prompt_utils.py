@@ -1,5 +1,3 @@
-
-# prompt_utils.py
 """
 Canada REAL Engine - Complete Prompt & Utility Library
 VERSION: 6.0 (Canada-Focused Production Stable)
@@ -12,7 +10,6 @@ import requests
 import json
 import os
 
-# --- Helper functions (from your comprehensive version) ---
 def word_count(text: str) -> int:
     return len(text.strip().split())
 
@@ -34,112 +31,85 @@ def validate_output(json_obj: dict) -> bool:
     if not (isinstance(chart, dict) and isinstance(chart.get("chart_type", ""), str) and isinstance(chart.get("data_points", []), list)): return False
     return True
 
-# --- BASE PROMPT: For Canada general dashboard topics ---
-CANADA_BASE_PROMPT = """
-You are Canada REAL Engine Analyst, an expert in Canadian economic and immigration trends.
-GOAL
-▪ Write data-rich analysis focused on Canada with international comparisons.
-▪ Use **trusted Canadian government sources** and official statistics where possible.
-▪ **Synthesize findings from at least 2-3 different Canadian sources** for comprehensive analysis.
-▪ Frame your response using **Canadian economic indicators** (GDP, employment, immigration targets).
-▪ Inject ONE concrete comparison to a previous period (e.g., YoY % change), focusing on Canadian data.
-▪ Vary wording every run—use synonyms or shuffle phrases. Avoid acronyms.
-▪ Cite Canadian sources like Statistics Canada, IRCC, Bank of Canada, provincial agencies.
-KPIS/INFOGRAPHIC CARDS
-▪ Extract 3–4 key Canadian numeric metrics (short label/value pairs, e.g., "Canada Job Growth": "+99,300").
-RELEVANCE
-▪ Output a 'relevance' block detailing practical implications for Canada.
-CHART
-▪ Design a chart concept based on key Canadian values from your analysis.
-LATEST RESOURCES REQUIREMENT:
-▪ For the field "latest_resources", ALWAYS return an array of at least 10 highly relevant Canadian and international resources.
-▪ Prioritize Canadian government sources, Statistics Canada, provincial agencies, and Canadian institutions.
-▪ Include international sources for comparison (OECD, World Bank) but maintain Canada focus.
-▪ Always rotate in at least 4 new Canadian sources with established core sources.
-▪ Each resource must have a "title", "provider", and a working "url".
-STRICT OUTPUT RULE:
-Return only a single valid JSON object matching the format below.
-JSON OUTPUT FORMAT
-{
-  "headline": "...",
-  "summary": "...",
-  "projection": 123.45,
-  "kpis": [
-    { "label": "Canada Metric Name", "value": "+4.2%" }
-  ],
-  "relevance": {
-    "program_suggestions": ["..."],
-    "target_students": "...",
-    "country_advantage": "...",
-    "policy_alert": "..."
-  },
-  "chart": {
-    "chart_type": "bar",
-    "x_axis": "Category",
-    "y_axis": "Canadian Values",
-    "data_points": [ { "label": "Ontario", "value": 78000 } ]
-  },
-  "latest_resources": [
-    { "title": "...", "provider": "Statistics Canada", "url": "..." }
-  ],
-  "source": "Statistics Canada, IRCC, Bank of Canada",
-  "last_updated": "2025-09-09T13:30:00Z"
-}
-""".strip()
+# -------- SECTION-SPECIFIC PROMPTS --------
 
-# --- CANADA IMMIGRATION REGIONAL PROMPT ---
-CANADA_IMMIGRATION_PROMPT = """
-You are Canada REAL Engine Analyst, an expert in Canadian immigration and global mobility trends.
+CANADA_LABOUR_PROMPT = """
+You are Canada REAL Engine Analyst, an expert in Canadian labour market trends.
 GOAL
-▪ Generate focused Canadian immigration analysis with international comparisons for 4 regions.
-▪ Each regional section should be **one cohesive paragraph (80-120 words)** focusing on Canada's position.
-▪ Focus on **Canadian immigration policies, Express Entry, PNP, processing times, and targets**.
-▪ Use **Canadian government data** from IRCC, provincial nominee programs, and official statistics.
-▪ Make Canada section the primary focus with others as comparative context.
-REGIONAL CONTENT REQUIREMENTS:
-▪ **Canada**: Express Entry draws, Provincial Nominee Programs, permanent resident targets, study permit caps, processing times, recent policy changes. Include specific IRCC numbers.
-▪ **United Kingdom**: Compare UK immigration with Canada's advantages - processing times, permanent residency pathways, post-study opportunities.
-▪ **Europe**: Compare European immigration with Canada's competitive positioning, bilingual advantage, startup visa programs.
-▪ **Southeast Asia**: Canada's relationship with Southeast Asian immigration - source countries, family class, skilled worker programs.
-REGIONAL JSON OUTPUT FORMAT:
-{
-  "headline": "Canada Immigration Outlook: Strategic Reduction & Quality Focus for 2025",
-  "regional_content": {
-    "canada": "Canada-focused paragraph about immigration policies, Express Entry, PNP, targets with IRCC statistics...",
-    "uk": "Comparison paragraph showing Canada's advantages over UK immigration pathways...", 
-    "europe": "Comparison paragraph showing Canada's competitive position vs European programs...",
-    "southeast-asia": "Canada's relationship with Southeast Asian migration patterns and programs..."
-  },
-  "kpis": [
-    { "label": "2025 PR Target", "value": "395,000" },
-    { "label": "Express Entry ITAs", "value": "33,404" },
-    { "label": "BC PNP Reduction", "value": "50%" },
-    { "label": "Study Permit Cap", "value": "437,000" }
-  ],
-  "relevance": {
-    "program_suggestions": ["Canadian Immigration Law", "Public Policy", "International Business", "Global Affairs"],
-    "target_students": "Students seeking Canadian immigration pathways, policy researchers, and international education professionals",
-    "country_advantage": "Canada's comprehensive immigration system provides multiple pathways and competitive processing times",
-    "policy_alert": "Major Canadian immigration policy shifts in 2025 affecting permanent residency and study permits"
-  },
-  "chart": {
-    "chart_type": "bar",
-    "x_axis": "Immigration Class",
-    "y_axis": "2025 Targets",
-    "data_points": [
-      { "label": "Economic Class", "value": 232150 },
-      { "label": "Family Class", "value": 94500 },
-      { "label": "Refugees", "value": 58350 },
-      { "label": "Other", "value": 10000 }
-    ]
-  },
-  "latest_resources": [
-    { "title": "IRCC Immigration Levels Plan 2025-2027", "provider": "IRCC", "url": "https://www.canada.ca/en/immigration-refugees-citizenship.html" }
-  ],
-  "source": "Immigration, Refugees and Citizenship Canada (IRCC)",
-  "last_updated": "2025-09-09T13:30:00Z"
-}
-""".strip()
+▪ Write a data-rich analysis of Canada’s labour market in 2025, using latest public and academic resources.
+▪ Cover national and sectoral job creation, unemployment trends, tech skills gap, workforce demographics, and wage growth.
+▪ Synthesize findings from at least three credible sources (Statistics Canada, Actalent, Job Bank, OECD, etc.).
+▪ ALWAYS cite statistics, policy updates, or workforce news with inline markdown links to the RESOURCE_MAP.
+▪ Inject concrete historical comparison (e.g., YoY job growth, current vs previous quarter).
+▪ At least two Canadian government/official sources and one international comparison required.
+KPIS/INFOGRAPHIC CARDS
+▪ Extract 3–4 key numeric indicators (e.g., “Q2 Job Growth: +99,300”, “Tech Unemployment: 3.3%”, “Wage Growth: +3.4% YoY”).
+CHART
+▪ Design a chart with major sectors (tech, health, education, manufacturing), statistical breakdowns.
+RESOURCES
+▪ "latest_resources" must list at least 10 credible, rotating, sector-diverse items: 3+ Canadian gov/stat, 2 academic, 2 industry. Always rotate at least 4 each run.
+STRICT OUTPUT RULE: Only output the requested JSON, nothing more.
+"""
+
+CANADA_TECH_PROMPT = """
+You are Canada REAL Engine Analyst in the digital, technology, and AI sector.
+GOAL
+▪ Analyze growth, innovation, AI adoption, tech investment, and digital job market in Canada's 2025 digital economy.
+▪ Compare Ontario, Quebec, BC, Alberta; mention AI, cyber, and digital skills.
+▪ ALWAYS cite tech salary growth, market size (CAGR), regional breakdown, and significant policy news. Synthesize at least two government/industry and one academic source.
+KPIS/INFOGRAPHIC CARDS: digital market size, AI investment, regional shares, CAGR.
+CHART: Provincial/sector bar/doughnut.
+RESOURCES: At least 10, with government, tech councils, and academic/industry mix.
+STRICT OUTPUT RULE: Output JSON object only.
+"""
+
+CANADA_STARTUP_PROMPT = """
+You are Canada REAL Engine Analyst for entrepreneurship and start-up immigration.
+GOAL
+▪ Profile Canada's start-up ecosystem, Start-up Visa, entrepreneur migration, sector distribution, and federal/provincial innovation.
+▪ Include Tech Network priorities, application caps, PR, and work permit news.
+▪ Synthesize insights from IRCC, Global Affairs, regional startup hubs, and innovation clusters.
+KPIS: SUV PRs, annual caps, sector split, work permit changes.
+CHART: Startup sector chart.
+RESOURCES: 10+ links; rotate government, council, academic, sector reports.
+STRICT OUTPUT RULE: Output JSON object only.
+"""
+
+CANADA_REGIONAL_PROMPT = """
+You are Canada REAL Engine Analyst focused on regional economic development.
+GOAL
+▪ Discuss 2025 economic trends in Prairies, Atlantic, Ontario, Quebec, BC, with investment, sector, and trade contrast.
+▪ Use quarterly growth figures and cite Bank of Canada, StatsCan, TD Economics, and regional policy authorities.
+KPIS, CHART, RESOURCES: As above, require 2+ Canadian government/financial, 1+ academic, all credible and varied.
+STRICT OUTPUT RULE: Output JSON object only.
+"""
+
+CANADA_EDUCATION_PROMPT = """
+You are Canada REAL Engine Analyst for international education and student mobility.
+GOAL
+▪ Summarize recent study permit caps, PGWP updates, major program focus (STEM, healthcare), and effects on provincial allocations.
+▪ Synthesize from IRCC, CBIE, MEQ, and leading academic or news analysis.
+KPIS, CHART, RESOURCES: Require 10+ credible, fresh links; 3+ government/statistical, 2+ academic, rotate 4+ sources per run.
+STRICT OUTPUT RULE: Output JSON object only.
+"""
+
+CANADA_IMMIGRATION_PROMPT = """
+You are Canada REAL Engine Analyst, specializing in immigration and global mobility.
+GOAL
+▪ Generate focused Canadian immigration policy summary and international comparison, with 4 regional sections.
+▪ For each region (Canada, UK, Europe, Southeast Asia), present a policy-focused (80-120 word) paragraph with detailed visa strategy, numbers, and recent regulatory news.
+▪ Use IRCC, UK Home Office, EU, and ASEAN sources as required. Cite all data points.
+KPIS, CHART, RESOURCES: As above; 10+ links, rotating government, academic, statistical sector, and policy reports.
+STRICT OUTPUT RULE: Output JSON object only.
+"""
+
+CANADA_BASE_PROMPT = """
+You are Canada REAL Engine Analyst, expert in Canadian economic policy.
+GOAL
+▪ Write data-rich, multi-source analysis focused on your topic with at least one major source-cited comparison to previous years/trends.
+▪ Leverage Canadian and global resources with clear citation and numeric rigor. Use at least three citations and a "latest_resources" section with 10+ diverse, fresh sources.
+▪ Output JSON object only (no comments or extra text).
+"""
 
 RESOURCE_MAP = {
     "canada_immigration": [],
@@ -153,26 +123,34 @@ RESOURCE_MAP = {
 def get_prompt_for_topic(topic_id: str) -> str:
     if topic_id == "canada_immigration":
         return CANADA_IMMIGRATION_PROMPT
-    return CANADA_BASE_PROMPT  # This covers all other Canada topics
+    if topic_id == "canada_labour":
+        return CANADA_LABOUR_PROMPT
+    if topic_id == "canada_tech_innovation":
+        return CANADA_TECH_PROMPT
+    if topic_id == "canada_startup_ecosystem":
+        return CANADA_STARTUP_PROMPT
+    if topic_id == "canada_regional_development":
+        return CANADA_REGIONAL_PROMPT
+    if topic_id == "canada_international_education":
+        return CANADA_EDUCATION_PROMPT
+    return CANADA_BASE_PROMPT
 
 def call_perplexity_api(prompt: str, topic_id: str) -> dict:
     api_key = os.environ.get("PERPLEXITY_API_KEY")
     if not api_key:
-        print(f"ERROR: PERPLEXITY_API_KEY not set for Canada {topic_id}.")
+        print(f"ERROR: PERPLEXITY_API_KEY not set for {topic_id}.")
         return None
-
     url = "https://api.perplexity.ai/chat/completions"
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     payload = {
-        "model": "sonar-pro", 
+        "model": "sonar-pro",
         "messages": [
-            {"role": "system", "content": "You are a Canada REAL Engine analyst. Return only valid JSON focused on Canadian data."}, 
+            {"role": "system", "content": "You are a Canada REAL Engine analyst. Only output valid strict JSON; no comments or extra text."},
             {"role": "user", "content": prompt}
         ],
-        "max_tokens": 2000, 
+        "max_tokens": 2000,
         "temperature": 0.7
     }
-
     try:
         print(f"--> Calling Perplexity API for Canada topic: {topic_id}")
         response = requests.post(url, headers=headers, json=payload, timeout=60)
@@ -200,7 +178,6 @@ def create_structured_fallback(topic_id: str) -> dict:
         "last_updated": datetime.datetime.now().isoformat(), 
         "topic": topic_id
     }
-
     if topic_id == "canada_immigration":
         fallback["regional_content"] = {
             "canada": "Loading Canadian immigration data...", 
@@ -210,5 +187,4 @@ def create_structured_fallback(topic_id: str) -> dict:
         }
     else:
         fallback["summary"] = "The latest Canadian analysis is being generated. Please check back shortly."
-
     return fallback
